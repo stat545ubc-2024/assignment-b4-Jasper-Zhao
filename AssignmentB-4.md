@@ -4,10 +4,6 @@ Jasper Zhao
 
 ## Option A – Strings and functional programming in R
 
-Reference: I used stopwords: the R package for finding and removing any
-stop word in the passsage. Link:
-<https://cran.r-project.org/web/packages/stopwords/>
-
 First, let’s load the necessary libraries.
 
 ``` r
@@ -54,9 +50,10 @@ library(testthat)
 
 ### Exercise 1
 
-Reference: I used stopwords: the R package for finding and removing any
-stop word in the passsage. Link:
-<https://cran.r-project.org/web/packages/stopwords/>
+Reference: *stopwords: the R package* is used for identifying stop
+words.
+
+Link: <https://cran.r-project.org/web/packages/stopwords/>
 
 We will use the text of Jane Austen’s novel “Emma” from package
 ‘janeaustenr’
@@ -94,14 +91,15 @@ top_words <- word_freq %>%
 ggplot(top_words, aes(x = reorder(word, n), y = n)) +
   geom_bar(stat = "identity") +
   coord_flip() +
-  labs(title = "Top 30 Most Common Words in Jane Austen's novel Emma except stop words",
+  labs(title = "Top 30 Most Common Words in Jane Austen's novel Emma w/o stop words",
        x = "Words",
        y = "Frequency") +
   theme_minimal()
 ```
 
-![](AssignmentB-4_files/figure-gfm/unnamed-chunk-2-1.png)<!-- --> \###
-Exercise 2
+![](AssignmentB-4_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+### Exercise 2
 
 My modified rules to Pig Latin is:
 
@@ -122,7 +120,7 @@ My modified rules to Pig Latin is:
 #' - For words begin with a vowel sound, the first letter of the word is moved to the end.
 #' - Add the suffix "eh" directly to the end of the rearranged word.
 #'
-#' @param words A character vector of words to be converted to modified Pig Latin.
+#' @param words An alphabetical-characters-only vector of words to be converted to modified Pig Latin.
 #'
 #' @return A character vector of words converted into the modified Pig Latin.
 #'
@@ -214,7 +212,7 @@ test_that("Function handles consonant-start words correctly", {
 })
 ```
 
-    ## Test passed 🥇
+    ## Test passed 🌈
 
 Test 2: The function can handle vowel-start words correctly
 
@@ -225,7 +223,7 @@ test_that("Function handles vowel-start words correctly", {
 })
 ```
 
-    ## Test passed 🎉
+    ## Test passed 😀
 
 Test 3: The function can handle single-letter words correctly
 
@@ -236,7 +234,7 @@ test_that("Function handles single-letter words correctly", {
 })
 ```
 
-    ## Test passed 🥳
+    ## Test passed 🌈
 
 Test 4: The function can throw error for non-character inputs
 
@@ -247,7 +245,7 @@ test_that("Function throws error for non-character inputs", {
 })
 ```
 
-    ## Test passed 🥇
+    ## Test passed 😸
 
 Test 5: The function can throw error for words with non-alphabetic
 characters
@@ -259,4 +257,4 @@ test_that("Function throws error for words with non-alphabetic characters", {
  })
 ```
 
-    ## Test passed 😀
+    ## Test passed 😸
